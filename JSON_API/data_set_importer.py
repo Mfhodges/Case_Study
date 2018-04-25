@@ -109,10 +109,12 @@ class get_json:
             raise( 'set a qterm and resource before you call the api')
         else:
             url = self.url + self.resource +'?'+ self.qterm + self.fields + self.sort_by + self.sort_order + self.key
-        return url
-            #with urllib.request.urlopen(self.url) as url:
-            #    data = json.loads(url.read().decode())
+        #return url
+        with urllib.request.urlopen(url) as url:
+            data = json.loads(url.read().decode())
 
+
+        return data
 
 if __name__ == '__main__':
 
@@ -123,7 +125,15 @@ if __name__ == '__main__':
     dpla.set_query('kittens')
     dpla.set_resource('items')
     dpla.set_sort('id','asc')
-    print(dpla.get_data())
+    dataset = dpla.get_data()['docs']
+    print(dataset)
+    with open('results.csv', 'w', newline='') as csvfile:
+        header = dataset[0].keys()
+        writer = csv.DictWriter(csvfile, fieldnames=header)
+        writer.writeheader()
+        for i in range(0,len(dataset)):
+            meetup = dataset[i].values()
+            writer.writerow(dataset[i])
 
 
         # data = dpla.get_data()
