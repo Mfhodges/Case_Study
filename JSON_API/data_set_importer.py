@@ -25,14 +25,11 @@ https://github.com/dpla/platform/wiki/Code4Lib-API-Documentation
 
 
 things to consider:
-how to handle an error?
-limits ?
-you cant call any of the set methods twice ...
+how to handle an error when reading a file ?
+API call limits?
 
 For each item, the parent object docs contains information about how that item was imported into the database: for example, ingestDate and other context about the record (see @context).
 Down in the sourceResource object, there’s information about the title and subject of the work. Here, the enumerated subject name: "Weasels" probably accounts for this being the first result.
-
-should i do a regex on the query string or does the api handle it ?
 
 """
 
