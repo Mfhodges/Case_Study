@@ -1,0 +1,15 @@
+
+look at: https://doepud.co.uk/blog/anatomy-of-a-url
+
+create github 
+add documention on how to download and run my scripts
+
+add requirement.txt
+
+https://www.dcplumer.com/resources/handouts/dpla-api-tutorial-2/
+
+
+parameters follow the '?' and are separated by the '&'
+e.g. 'q=url'
+
+
